@@ -18,3 +18,26 @@ bird.addEventListener('click', function() {
     bird.style.left = px + "px";
 })
 
+window.addEventListener("keydown", function(e){
+    console.log(e.key);
+//Als mijn key geljk is aan de tekst arrowright, dan voert het die code uit van opdracht 1
+    if(e.key == "ArrowRight"){
+        px += 50;
+        bird.style.left = px + "px";
+    }
+
+    if(e.key == "ArrowUp"){
+        px += 50;
+        bird.style.bottom = px + "px";
+    }
+
+    if(e.key == "ArrowDown"){
+        px += 50;
+        bird.style.top = px + "px";
+    }
+
+    if(e.key == "ArrowLeft"){
+        px += 50;
+        bird.style.right = px + "px";
+    }
+})
