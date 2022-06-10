@@ -103,3 +103,12 @@ function placeFood() {
     foodX = Math.floor(Math.random() * cols) * blockSize;
     foodY = Math.floor(Math.random() * rows) * blockSize;
 }
+
+// 3 tips en tops
+// Tips: Beter const of let gebruiken inplaats van var.
+// Je zou de nieuwere manier van functions oproepen kunnen gebruiken in plaats van de oude.
+// Langere comments gebruiken(Meer informatie).
+
+// Tops: Veel comments gebruikt.
+// Overzichtelijke code.
+// Geen spelfouten.
