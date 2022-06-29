@@ -1,8 +1,8 @@
 
 //board
 let blockSize = 25;
-let rows = 32;
-let cols = 32;
+let rows = 29.5;
+let cols = 29.5;
 let board;
 let context; 
 
@@ -19,7 +19,17 @@ let snakeBody = [];
 let foodX;
 let foodY;
 
+//score
+let score;
+
+
+var eatSound;
+
 var gameOver = false;
+
+function preload() {
+    eatSound = loadSound("baow.mp3");
+}
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -31,6 +41,12 @@ window.onload = function() {
     document.addEventListener("keyup", changeDirection);
     // update();
     setInterval(update, 1000/10); //100 milliseconds
+}
+
+function drawScore(){
+    ctx.fillStyle = "white";
+    ctx.font = "10px Verdana";
+    ctx.fillText("Score " + score, canvas.width-50, 10);
 }
 
 // Game over pop up
@@ -50,6 +66,7 @@ function update() {
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
         placeFood();
+        eatSound.play();
     }
 
     for (let i = snakeBody.length-1; i > 0; i--) {
@@ -58,6 +75,8 @@ function update() {
     if (snakeBody.length) {
         snakeBody[0] = [snakeX, snakeY];
     }
+
+
 
 // Color of the snake and the speed of the snake
     context.fillStyle="lime";
