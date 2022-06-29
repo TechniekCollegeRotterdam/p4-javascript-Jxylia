@@ -1,23 +1,23 @@
 
 //board
-var blockSize = 25;
-var rows = 32;
-var cols = 32;
-var board;
-var context; 
+let blockSize = 25;
+let rows = 32;
+let cols = 32;
+let board;
+let context; 
 
 //snake head
-var snakeX = blockSize * 5;
-var snakeY = blockSize * 5;
+let snakeX = blockSize * 5;
+let snakeY = blockSize * 5;
 
-var velocityX = 0;
-var velocityY = 0;
+let velocityX = 0;
+let velocityY = 0;
 
-var snakeBody = [];
+let snakeBody = [];
 
 //food
-var foodX;
-var foodY;
+let foodX;
+let foodY;
 
 var gameOver = false;
 
@@ -33,17 +33,20 @@ window.onload = function() {
     setInterval(update, 1000/10); //100 milliseconds
 }
 
+// Game over pop up
 function update() {
     if (gameOver) {
         return;
     }
-
+// Color of the board
     context.fillStyle="black";
     context.fillRect(0, 0, board.width, board.height);
 
+// Color of the food(apple)
     context.fillStyle="red";
     context.fillRect(foodX, foodY, blockSize, blockSize);
-
+    
+// If snake eats food(apple), the food get's added into it's body
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
         placeFood();
@@ -56,6 +59,7 @@ function update() {
         snakeBody[0] = [snakeX, snakeY];
     }
 
+// Color of the snake and the speed of the snake
     context.fillStyle="lime";
     snakeX += velocityX * blockSize;
     snakeY += velocityY * blockSize;
@@ -64,7 +68,7 @@ function update() {
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
     }
 
-    //game over conditions
+    //Game over conditions
     if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize) {
         gameOver = true;
         alert("Game Over");
@@ -78,6 +82,7 @@ function update() {
     }
 }
 
+//The keyboard controls
 function changeDirection(e) {
     if (e.code == "ArrowUp" && velocityY != 1) {
         velocityX = 0;
