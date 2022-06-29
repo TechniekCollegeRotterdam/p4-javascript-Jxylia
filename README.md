@@ -1,1 +1,7 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7869250&assignment_repo_type=AssignmentRepo)
+Flashy Snake:
+
+Ik heb het spel "Snake" gemaakt met behulp van HTML, CSS en Javascript.
+Snake speel je door met de pijltjes op het keyboard, de rode appel op te eten en zo lang mogelijk te overleven terwijl je met elke rode appel langer word.
+
+Pull Request;
+https://github.com/TechniekCollegeRotterdam/p4-javascript-Jxylia/pull/2
