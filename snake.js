@@ -22,7 +22,7 @@ let foodY;
 //score
 let score;
 
-
+//Variabele van geluid
 var eatSound;
 
 var gameOver = false;
