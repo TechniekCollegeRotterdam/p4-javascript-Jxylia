@@ -23,9 +23,9 @@ let foodY;
 let score;
 
 //Variabele van geluid
-var eatSound;
+let eatSound;
 
-var gameOver = false;
+let gameOver = false;
 
 function preload() {
     eatSound = loadSound("baow.mp3");
