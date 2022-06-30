@@ -23,17 +23,12 @@ let foodY;
 let score;
 
 //Variabele van geluid
-let  eatSound;
+let eatSound = new Audio("./baow.mp3");
 
-console.log(preload);
+
 
 let gameOver = false;
 
-function preload() {
-    soundFormats('mp3', 'ogg');
-    eatSound = loadSound("baow.mp3");
-   
-}
 
 
 window.onload = function() {
@@ -55,6 +50,7 @@ function drawScore(){
 }
 
 // Game over pop up
+
 function update() {
     if (gameOver) {
         return;
