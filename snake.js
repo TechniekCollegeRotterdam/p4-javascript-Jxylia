@@ -1,8 +1,8 @@
 
 //board
-let blockSize = 25;
-let rows = 29.5;
-let cols = 29.5;
+let blockSize = 20;
+let rows = 34;
+let cols = 34;
 let board;
 let context; 
 
@@ -23,13 +23,18 @@ let foodY;
 let score;
 
 //Variabele van geluid
-let eatSound;
+let  eatSound;
+
+console.log(preload);
 
 let gameOver = false;
 
 function preload() {
+    soundFormats('mp3', 'ogg');
     eatSound = loadSound("baow.mp3");
+   
 }
+
 
 window.onload = function() {
     board = document.getElementById("board");
@@ -66,7 +71,7 @@ function update() {
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
         placeFood();
-        eatSound.play();
+        eatSound.play(  )
     }
 
     for (let i = snakeBody.length-1; i > 0; i--) {
